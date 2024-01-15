@@ -25,7 +25,7 @@ ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: calc((100% - 40px) / 3);
+    width: calc((100% - 20px) / 3);
     height: 280px;
 }
 
