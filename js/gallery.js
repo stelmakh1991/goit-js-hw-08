@@ -71,12 +71,12 @@ function createImageItem(obj) {
     const largeImage = obj.original;
     const imageDescription = obj.description;
     return `<li class="gallery-item">
-  <a class="gallery-link" href=${largeImage}>
+  <a class="gallery-link" href="${largeImage}">
     <img
       class="gallery-image"
-      src=${smallImage}
+      src="${smallImage}"
       data-source="${largeImage}"
-      alt=${imageDescription}
+      alt="${imageDescription}"
     />
   </a>
 </li>`;
@@ -90,15 +90,14 @@ function createGalleryMarkup() {
 createGalleryMarkup();
 // Creation of modal window
 imageList.addEventListener('click', e => {
-    if (e.target === e.currentTarget) return;
-    e.preventDefault();
+  if (e.target.classList.contains('galleryImage')) e.preventDefault();
 
     const instance = basicLightbox.create(`
-    <div class="modal">
+    <div class="modal" role="fullsize-img-review">
         <img
       class="gallery-image"
-      src=${e.target.dataset.source}
-      alt=${e.target.alt}
+      src="${e.target.dataset.source}"
+      alt="${e.target.alt}"
     />
     </div>
     `, {
