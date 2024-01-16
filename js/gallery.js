@@ -102,7 +102,6 @@ imageList.addEventListener('click', e => {
     />
     </div>
     `, {
-        closable: false,
         onShow: instance => {
             window.addEventListener('keydown', closeModal);
         },
