@@ -90,7 +90,8 @@ function createGalleryMarkup() {
 createGalleryMarkup();
 // Creation of modal window
 imageList.addEventListener('click', e => {
-  if (e.target.classList.contains('galleryImage')) e.preventDefault();
+  if (e.target.nodeName !== 'IMG') return;
+    e.preventDefault();
 
     const instance = basicLightbox.create(`
     <div class="modal" role="fullsize-img-review">
